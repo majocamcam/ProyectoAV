@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: f1b2db6c00f7944819d201c307685e6e
+guid: b2f6bde5bfea64ca2a9467599e80d18c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2516910209567574332
-    second: cuadros_0
-  - first:
-      213: 6018009266375155995
-    second: cuadros_1
-  - first:
-      213: 6547229921762960285
-    second: cuadros_2
-  - first:
-      213: -1178356555523272589
-    second: cuadros_3
+      213: -2324407618542072946
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo 11_0"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,8 +69,8 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
+    resizeAlgorithm: 1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -90,8 +81,8 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
+    resizeAlgorithm: 1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -102,8 +93,8 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
+    resizeAlgorithm: 1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -115,85 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cuadros_0
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo 11_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 97
-        width: 61
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c6bb23ef73221dd0800000000000000
-      internalID: -2516910209567574332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cuadros_1
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 97
-        width: 60
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b11ec410b83448350800000000000000
-      internalID: 6018009266375155995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cuadros_2
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 5
-        width: 60
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d936d75dcee6cda50800000000000000
-      internalID: 6547229921762960285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cuadros_3
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 56
         y: 0
-        width: 60
-        height: 60
+        width: 13
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 4, z: 3, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3705849b4f2a5afe0800000000000000
-      internalID: -1178356555523272589
+      spriteID: e8b869f069b0ebfd0800000000000000
+      internalID: -2324407618542072946
       vertices: []
       indices: 
       edges: []
@@ -201,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd333b904d27640fb93bcd743a036a09
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
