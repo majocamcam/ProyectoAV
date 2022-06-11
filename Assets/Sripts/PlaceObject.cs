@@ -9,6 +9,7 @@ public class PlaceObject : MonoBehaviour
     public GameObject objectToCreate;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     bool alreadycreated;
+    public GameObject SpamWarning;
 
 
     void Update()
@@ -29,6 +30,7 @@ public class PlaceObject : MonoBehaviour
                 var hit = hits[0];
                 GameObject.Instantiate(objectToCreate, hit.pose.position, hit.pose.rotation);
                 alreadycreated = true;
+                SpamWarning.SetActive(false); 
             }
         } else {
             RayCastManager = FindObjectOfType<ARRaycastManager>();

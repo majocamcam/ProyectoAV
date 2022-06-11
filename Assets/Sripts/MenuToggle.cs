@@ -21,6 +21,14 @@ public class MenuToggle : MonoBehaviour
         SpriteState pressedstate;
         pressedstate.pressedSprite = downpress;
         targetbutton.spriteState = pressedstate;
+
+        GetComponentInChildren<ItemSelection>().DisableItems();
+
+
+        if (PlayerPrefs.GetInt("level") <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     public void Toggle ()
@@ -42,6 +50,14 @@ public class MenuToggle : MonoBehaviour
             SpriteState pressedstate;
             pressedstate.pressedSprite = downpress;
             targetbutton.spriteState = pressedstate;
+        }
+    }
+
+    public void OnlyHide()
+    {
+        if (visible)
+        {
+            Toggle();
         }
     }
 

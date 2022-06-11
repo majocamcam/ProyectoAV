@@ -16,12 +16,7 @@ public class ItemSelection : MonoBehaviour
     public LaunchManager launchManager;
 
 
-    private void Start()
-    {
-        DisableItems();
-    }
-
-    private void DisableItems()
+    public void DisableItems()
     {
         juice.SetActive(false);
         gameboy.SetActive(false);
