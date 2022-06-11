@@ -17,15 +17,21 @@ public class LaunchManager : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     
     public void OnPointerDown(PointerEventData eventData)
     {
-        isPressed = true; 
+        if (this.GetComponent<Button>().interactable)
+        {
+            isPressed = true;
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        isPressed = false;
-        if (currentPressTime > 0.1f)
+        if (this.GetComponent<Button>().interactable)
         {
-            Launchobject();
+            isPressed = false;
+            if (currentPressTime > 0.1f)
+            {
+                Launchobject();
+            }
         }
     }
 

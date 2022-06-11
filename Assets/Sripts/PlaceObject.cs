@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
+using TMPro;
 
 public class PlaceObject : MonoBehaviour
 {
@@ -11,10 +12,18 @@ public class PlaceObject : MonoBehaviour
     bool alreadycreated;
     public GameObject SpamWarning;
     GameObject spawnedObject;
+    public TextMeshProUGUI distCounter;
 
     void Update()
     {
-        if (alreadycreated) { return; }
+        if (alreadycreated)
+        {
+            if (spawnedObject)
+            {
+                distCounter.text = Vector3.Distance(Camera.main.transform.position, spawnedObject.transform.position).ToString();
+            }
+            return;
+        }
         if (RayCastManager != null) {
             Touch touch;
             if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began) {
