@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 48538e4323b224f4a987ed77b02be129
+guid: c8347b96cb63e4657bbc042bd75fefda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3660236094980743523
-    second: GameOver_End_0
+      213: -1641426866252558263
+    second: "Ilustracio\u0301n_sin_ti\u0301tulo 2_0"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 27, y: 41, z: 23, w: 37}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -68,7 +68,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 32
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -80,7 +80,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 32
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -92,7 +92,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 32
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameOver_End_0
+      name: "Ilustracio\u0301n_sin_ti\u0301tulo 2_0"
       rect:
         serializedVersion: 2
-        x: 27
-        y: 41
-        width: 78
-        height: 49
+        x: 1
+        y: 1
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 3, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361e36be555cbc230800000000000000
-      internalID: 3660236094980743523
+      spriteID: 940db3836fa7839e0800000000000000
+      internalID: -1641426866252558263
       vertices: []
       indices: 
       edges: []

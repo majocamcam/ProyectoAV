@@ -50,13 +50,15 @@ public class LaunchManager : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         currentpreview = item;
         currentlaunchobject = Instantiate(item, item.transform.position, item.transform.rotation);
         currentlaunchobject.AddComponent<Rigidbody>().mass = 10;
-        currentlaunchobject.SetActive(false); 
+        currentlaunchobject.SetActive(false);
+        this.GetComponent<Button>().interactable = true;
     }
 
     void Launchobject()
     {
         currentpreview.SetActive(false);
         currentlaunchobject.SetActive(true);
+        this.GetComponent<Button>().interactable = false;
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 force = new Vector3(camForward.x * launchStr * currentPressTime, Mathf.Max(camForward.y, 0.1f) * launchStr * launchUp, camForward.z * launchStr);
         currentlaunchobject.GetComponent<Rigidbody>().AddForce(force);

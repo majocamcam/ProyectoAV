@@ -10,10 +10,11 @@ public class PlaceObject : MonoBehaviour
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     bool alreadycreated;
     public GameObject SpamWarning;
-
+    GameObject spawnedObject;
 
     void Update()
     {
+        if (alreadycreated) { return; }
         if (RayCastManager != null) {
             Touch touch;
             if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began) {
@@ -26,14 +27,22 @@ public class PlaceObject : MonoBehaviour
 
             if (RayCastManager.Raycast(touch.position, hits))
             {
-                if (alreadycreated) { return; }
                 var hit = hits[0];
-                GameObject.Instantiate(objectToCreate, hit.pose.position, hit.pose.rotation);
+                spawnedObject = GameObject.Instantiate(objectToCreate, hit.pose.position, hit.pose.rotation);
                 alreadycreated = true;
                 SpamWarning.SetActive(false); 
             }
         } else {
             RayCastManager = FindObjectOfType<ARRaycastManager>();
         }
+    }
+
+    public void ResetObject()
+    {
+        if (spawnedObject)
+        {
+            Destroy(spawnedObject, 0);
+        }
+        alreadycreated = false;
     }
 }
