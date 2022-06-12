@@ -10,7 +10,9 @@ public class MenuToggle : MonoBehaviour
     bool visible = true;
     public Image targetimage;
     public Button targetbutton;
-    public Sprite downpress, downidle, uppress, upidle; 
+    public Sprite downpress, downidle, uppress, upidle;
+    public AudioSource upscroll;
+    public AudioSource downscroll;
 
     private void Start()
     {
@@ -42,6 +44,7 @@ public class MenuToggle : MonoBehaviour
             SpriteState pressedstate;
             pressedstate.pressedSprite = uppress;
             targetbutton.spriteState = pressedstate;
+            downscroll.Play();
         }
         else 
        {
@@ -50,6 +53,7 @@ public class MenuToggle : MonoBehaviour
             SpriteState pressedstate;
             pressedstate.pressedSprite = downpress;
             targetbutton.spriteState = pressedstate;
+            upscroll.Play();
         }
     }
 

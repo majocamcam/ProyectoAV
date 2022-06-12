@@ -14,6 +14,7 @@ public class LaunchManager : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
     public float launchStr = 12000;
     public float launchUp = 4;
     bool isPressed;
+    public AudioSource throwsound; 
     
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -69,6 +70,7 @@ public class LaunchManager : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         Vector3 force = new Vector3(camForward.x * launchStr * currentPressTime, Mathf.Max(camForward.y, 0.1f) * launchStr * launchUp, camForward.z * launchStr);
         currentlaunchobject.GetComponent<Rigidbody>().AddForce(force);
         Destroy(currentlaunchobject.gameObject, 3);
+        throwsound.Play();
     }
 
 }

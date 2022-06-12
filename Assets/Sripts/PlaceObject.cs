@@ -12,18 +12,24 @@ public class PlaceObject : MonoBehaviour
     bool alreadycreated;
     public GameObject SpamWarning;
     GameObject spawnedObject;
-    public TextMeshProUGUI distCounter;
+    const float minSafeItemDist = 5;
+    const float maxSafeDist = 15;
+    const float safefDist = 10;
 
     void Update()
     {
         if (alreadycreated)
         {
-            if (spawnedObject)
-            {
-                distCounter.text = Vector3.Distance(Camera.main.transform.position, spawnedObject.transform.position).ToString();
-            }
             return;
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SpawnOnPos(Camera.main.transform.position + Camera.main.transform.forward * 20, Quaternion.identity);
+            }
+        }
+
         if (RayCastManager != null) {
             Touch touch;
             if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began) {
@@ -37,13 +43,28 @@ public class PlaceObject : MonoBehaviour
             if (RayCastManager.Raycast(touch.position, hits))
             {
                 var hit = hits[0];
-                spawnedObject = GameObject.Instantiate(objectToCreate, hit.pose.position, hit.pose.rotation);
-                alreadycreated = true;
-                SpamWarning.SetActive(false); 
+                SpawnOnPos(hit.pose.position, hit.pose.rotation);
             }
-        } else {
+        }
+        else
+        {
             RayCastManager = FindObjectOfType<ARRaycastManager>();
         }
+    }
+
+    void SpawnOnPos(Vector3 pos, Quaternion rot)
+    {
+        if (Vector3.Distance(Camera.main.transform.position, pos) < minSafeItemDist || Vector3.Distance(Camera.main.transform.position, pos) > maxSafeDist)
+        {
+            Debug.Log("Te has pasadooo");
+            pos = Camera.main.transform.position + (pos - Camera.main.transform.position).normalized * safefDist;
+        }
+        spawnedObject = GameObject.Instantiate(objectToCreate, pos, rot);
+        spawnedObject.transform.localScale = Vector3.one * 0.4f;
+        spawnedObject.SetActive(true);
+        spawnedObject.transform.GetChild(0).gameObject.SetActive(true);
+        alreadycreated = true;
+        SpamWarning.SetActive(false);
     }
 
     public void ResetObject()
@@ -53,5 +74,6 @@ public class PlaceObject : MonoBehaviour
             Destroy(spawnedObject, 0);
         }
         alreadycreated = false;
+        SpamWarning.SetActive(true);
     }
 }

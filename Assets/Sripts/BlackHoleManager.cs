@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BlackHoleManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class BlackHoleManager : MonoBehaviour
     public GameObject Overlay;
     public MenuToggle Menu;
     public GameObject GameOver;
+    public AudioSource lvlupSound;
+    public TextMeshProUGUI endgameText;
+    string blackHoleName;
 
     private void Start()
     {
@@ -31,6 +35,7 @@ public class BlackHoleManager : MonoBehaviour
         {
             return;
         }
+        lvlupSound.Play();
         SetLevel(blackholelevel + 1);
     }
 
@@ -64,6 +69,8 @@ public class BlackHoleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5.30f);
         GameOver.SetActive(true);
+        blackHoleName = PlayerPrefs.GetString("name");
+        endgameText.text = $"YOUR PLANET WAS EATEN BY {blackHoleName}! \n \n PLAY AGAIN?";
     }
 
     void Looselevel()
