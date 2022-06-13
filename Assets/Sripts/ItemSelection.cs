@@ -33,7 +33,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         juice.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(juice);
+        launchManager.Selectlaunchitem(juice, BlackHoleManager.targetDesiredItem == throwItemType.juice);
     }
 
     public void Selectgameboy()
@@ -41,7 +41,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         gameboy.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(gameboy);
+        launchManager.Selectlaunchitem(gameboy, BlackHoleManager.targetDesiredItem == throwItemType.console);
     }
 
     public void Selectlamp()
@@ -49,7 +49,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         lamp.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(lamp);
+        launchManager.Selectlaunchitem(lamp, BlackHoleManager.targetDesiredItem == throwItemType.lamp);
     }
 
     public void Selectcereals()
@@ -57,7 +57,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         cereals.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(cereals);
+        launchManager.Selectlaunchitem(cereals, BlackHoleManager.targetDesiredItem == throwItemType.cereals);
     }
 
     public void Selecttvremote()
@@ -65,7 +65,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         tvremote.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(tvremote);
+        launchManager.Selectlaunchitem(tvremote, BlackHoleManager.targetDesiredItem == throwItemType.remote);
     }
 
     public void Selectdonut()
@@ -73,7 +73,7 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         donut.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(donut);
+        launchManager.Selectlaunchitem(donut, BlackHoleManager.targetDesiredItem == throwItemType.donut);
     }
 
     public void Selectmug()
@@ -81,6 +81,6 @@ public class ItemSelection : MonoBehaviour
         DisableItems();
         mug.SetActive(true);
         launchbutton.SetActive(true);
-        launchManager.Selectlaunchitem(mug);
+        launchManager.Selectlaunchitem(mug, BlackHoleManager.targetDesiredItem == throwItemType.mug);
     }
 }

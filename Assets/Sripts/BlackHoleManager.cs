@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+
+public enum throwItemType { None, lamp, console, donut, remote, mug, cereals, juice}
 
 public class BlackHoleManager : MonoBehaviour
 {
@@ -20,6 +23,11 @@ public class BlackHoleManager : MonoBehaviour
     public AudioSource lvlupSound;
     public TextMeshProUGUI endgameText;
     string blackHoleName;
+    List<throwItemType> throwList = new List<throwItemType>() { throwItemType.cereals, throwItemType.console, throwItemType.donut, throwItemType.remote, throwItemType.mug, throwItemType.lamp, throwItemType.juice };
+    public List<Sprite> throwItemIcons;
+    public static throwItemType targetDesiredItem;
+    public static BlackHoleManager Instance;
+    public Image desiredPreviewImg;
 
     private void Start()
     {
@@ -27,6 +35,8 @@ public class BlackHoleManager : MonoBehaviour
         {
             SetLevel(PlayerPrefs.GetInt("level"));
         }
+        NewDesiredObject();
+        Instance = this;
     }
 
     void Addlevel()
@@ -63,6 +73,19 @@ public class BlackHoleManager : MonoBehaviour
             Menu.OnlyHide();
             StartCoroutine(DelayedGameOverScreen());
         }
+        else
+        {
+            NewDesiredObject();
+        }
+    }
+
+    private void NewDesiredObject()
+    {
+        int randomInt = Random.Range(0, 7);
+        targetDesiredItem = throwList[randomInt];
+        Debug.Log($"Desired item is {targetDesiredItem}");
+
+        desiredPreviewImg.sprite = throwItemIcons[randomInt];
     }
 
     private IEnumerator DelayedGameOverScreen()

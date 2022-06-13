@@ -15,6 +15,7 @@ public class PlaceObject : MonoBehaviour
     const float minSafeItemDist = 5;
     const float maxSafeDist = 15;
     const float safefDist = 10;
+    public GameObject PanelObjects;
 
     void Update()
     {
@@ -65,6 +66,7 @@ public class PlaceObject : MonoBehaviour
         spawnedObject.transform.GetChild(0).gameObject.SetActive(true);
         alreadycreated = true;
         SpamWarning.SetActive(false);
+        PanelObjects.SetActive(true);
     }
 
     public void ResetObject()
@@ -75,5 +77,6 @@ public class PlaceObject : MonoBehaviour
         }
         alreadycreated = false;
         SpamWarning.SetActive(true);
+        PanelObjects.SetActive(false);
     }
 }

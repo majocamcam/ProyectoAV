@@ -52,22 +52,33 @@ public class LaunchManager : MonoBehaviour, IPointerDownHandler,IPointerUpHandle
         
     }
 
-    public void Selectlaunchitem (GameObject item)
+    public void Selectlaunchitem (GameObject item, bool isDesiredItem)
     {
         currentpreview = item;
+        if (currentlaunchobject!= null)
+        {
+            Destroy(currentlaunchobject);
+        }
         currentlaunchobject = Instantiate(item, item.transform.position, item.transform.rotation);
         currentlaunchobject.AddComponent<Rigidbody>().mass = 10;
         currentlaunchobject.SetActive(false);
         this.GetComponent<Button>().interactable = true;
+        if (!isDesiredItem)
+        {
+            currentlaunchobject.GetComponent<BoxCollider>().isTrigger = false;
+        }
     }
 
     void Launchobject()
     {
+        float verticalLaunchStr = (Camera.main.transform.position.y > BlackHoleManager.Instance.transform.position.y)? 1 : launchUp;
+
+
         currentpreview.SetActive(false);
         currentlaunchobject.SetActive(true);
         this.GetComponent<Button>().interactable = false;
         Vector3 camForward = Camera.main.transform.forward;
-        Vector3 force = new Vector3(camForward.x * launchStr * currentPressTime, Mathf.Max(camForward.y, 0.1f) * launchStr * launchUp, camForward.z * launchStr);
+        Vector3 force = new Vector3(camForward.x * launchStr * currentPressTime, Mathf.Max(camForward.y, 0.1f) * launchStr * verticalLaunchStr, camForward.z * launchStr);
         currentlaunchobject.GetComponent<Rigidbody>().AddForce(force);
         Destroy(currentlaunchobject.gameObject, 3);
         throwsound.Play();
